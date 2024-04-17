@@ -1,0 +1,35 @@
+{
+  "project_name": "FlowGNNs_2D",
+  "dataset": {
+    "folder": "weights",
+    "type": "solid",
+    "dt": 0.005,
+    "samplingFactor": 1,
+    "n_sim": 15,
+    "radius_connectivity": 9,
+    "dataset_dim": "2D",
+    "external_force_dim": 0,
+    "state_variables": ["Ux", "Uy", "P"],
+    "datasetPaths": {
+      "train": "cfd_data_train.pt",
+      "val": "cfd_data_val.pt",
+      "test": "cfd_data_test.pt"
+    }
+  },
+  "model": {
+    "n_hidden": 2,
+    "dim_hidden": 100,
+    "passes": 20,
+    "filters": 1,
+    "seed": 1,
+    "fixLr": true,
+    "lr": 4e-4,
+    "lambda_d": 10,
+    "noise_var": 1e-4,
+    "batch_size": 20,
+    "max_epoch": 800,
+    "miles": [200, 400, 600],
+    "gamma": 3e-1,
+    "rollout_freq": 25
+  }
+}

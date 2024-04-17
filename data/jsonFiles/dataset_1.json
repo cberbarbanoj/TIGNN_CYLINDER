@@ -1,0 +1,35 @@
+{
+  "project_name": "BeamGNNs_2D_visco",
+  "dataset": {
+    "folder": "weights",
+    "type": "solid",
+    "dt": 0.01,
+    "samplingFactor": 1,
+    "n_sim": 15,
+    "radius_connectivity": 9,
+    "dataset_dim": "2D",
+    "external_force_dim": 1,
+    "state_variables": ["COORD.COOR1", "COORD.COOR2", "v1", "v2", "S.S11", "S.S22", "S.S12"],
+    "datasetPaths": {
+      "train": "Beam_2D_visco_V12_9_02_edgeAu_train.pt",
+      "val": "Beam_2D_visco_V12_9_02_edgeAu_val.pt",
+      "test": "Beam_2D_visco_V12_9_02_edgeAu_test_test.pt"
+    }
+  },
+  "model": {
+    "n_hidden": 2,
+    "dim_hidden": 100,
+    "passes": 8,
+    "filters": 1,
+    "seed": 1,
+    "fixLr": true,
+    "lr": 4e-4,
+    "lambda_d": 10,
+    "noise_var": 4e-4,
+    "batch_size": 80,
+    "max_epoch": 800,
+    "miles": [100, 200, 300, 500],
+    "gamma": 3e-1,
+    "rollout_freq": 50
+  }
+}

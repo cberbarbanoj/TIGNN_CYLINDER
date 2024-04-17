@@ -1,0 +1,34 @@
+{
+  "project_name": "Cylinder_GNNs",
+  "dataset": {
+    "folder": "weights",
+    "type": "solid",
+    "dt": 0.01,
+    "n_sim": 15,
+    "radius_connectivity": 9,
+    "dataset_dim": "2D",
+    "external_force_dim": 0,
+    "state_variables": ["Ux", "Uy", "P"],
+    "datasetPaths": {
+      "train": "train.h5",
+      "val": "valid.h5",
+      "test": "test.h5"
+    }
+  },
+  "model": {
+    "n_hidden": 2,
+    "dim_hidden": 128,
+    "passes": 15,
+    "filters": 1,
+    "seed": 1,
+    "fixLr": true,
+    "lr": 1e-4,
+    "lambda_d": 10,
+    "noise_var": 2e-2,
+    "batch_size": 2,
+    "max_epoch": 1600,
+    "miles": [400, 800, 1200],
+    "gamma": 1e-1,
+    "rollout_freq": 50
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "project_name": "FluidsGNN_",
+  "dataset": {
+    "folder": "weights",
+    "type": "fluid",
+    "dt": 0.004,
+    "samplingFactor": 1,
+    "n_sim": 15,
+    "radius_connectivity": 0.007,
+    "dataset_dim": "3D",
+    "external_force_dim": 0,
+    "state_variables": ["COORD.COOR1", "COORD.COOR2", "COORD.COOR3", "v1", "v2", "v3", "E"],
+    "datasetPaths": {
+      "train": "Water_03-05_all_dt004_0070_train.pt",
+      "val": "Water_03-05_all_dt004_0070_val.pt",
+      "test": "Water_03-05_all_dt004_0070_test.pt"
+    }
+  },
+  "model": {
+    "n_hidden": 2,
+    "dim_hidden": 124,
+    "passes": 6,
+    "seed": 1,
+    "fixLr": true,
+    "lr": 8e-4,
+    "lambda_d": 10,
+    "noise_var": 0,
+    "batch_size": 1,
+    "max_epoch": 3,
+    "miles": [100, 200, 300, 500],
+    "gamma": 3e-1,
+    "rollout_freq": 100
+  }
+}
